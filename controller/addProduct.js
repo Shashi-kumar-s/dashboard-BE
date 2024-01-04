@@ -3,8 +3,10 @@ const addProduct = require('../model/addProduct')
 
 
 exports.addProduct = async (req, res) => {
+  console.log("hhhhhhhhhhheeeeeeeeeeeellll");
     try {
       const requestData = req.body;
+      console.log(requestData,"REEEEEEEEEEEEEEeeee");
       const newProductData = new addProduct(requestData);
       const savedData = await newProductData.save();
       res.status(201).json({ message: "Data saved successfully", data: savedData });
@@ -49,7 +51,7 @@ exports.addProduct = async (req, res) => {
   };
 
 
-  
+
   exports.updateSingleProductDataById = async (req, res) => {
     try {
       const productId = req.params.id;
